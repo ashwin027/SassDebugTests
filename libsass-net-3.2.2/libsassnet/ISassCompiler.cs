@@ -18,12 +18,11 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
-using System;
 using System.Collections.Generic;
 
 namespace LibSassNet
 {
-    public interface ISassCompiler : IDisposable
+    public interface ISassCompiler
     {
         string Compile(string source, OutputStyle outputStyle = OutputStyle.Nested, bool includeSourceComments = true, int precision = 5, IEnumerable<string> includePaths = null);
         CompileFileResult CompileFile(string inputPath, OutputStyle outputStyle = OutputStyle.Nested, string sourceMapPath = null, bool includeSourceComments = true, int precision = 5, IEnumerable<string> additionalIncludePaths = null);

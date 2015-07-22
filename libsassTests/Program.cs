@@ -34,14 +34,13 @@ namespace libsasstest
             var sw = new Stopwatch();
             sw.Start();
 
-            using (SassCompiler compiler = new SassCompiler())
+            SassCompiler compiler = new SassCompiler();
             {
 
-                var result = compiler.CompileFile(Path.Combine(srcpath, @"..\..\bootstrap.scss"),
-                    includeSourceComments: false
-                );
+                //var result = compiler.CompileFile(Path.Combine(srcpath, @"..\..\bootstrap.scss"), includeSourceComments: false );
+                var result = compiler.CompileFile(Path.Combine(srcpath, @"..\..\default.scss"), includeSourceComments: false);
 
-                File.WriteAllText(Path.Combine(srcpath, String.Format(@"..\..\bootstrap-libsass{0}.css", jobID)), result.CSS);
+                File.WriteAllText(Path.Combine(srcpath, String.Format(@"..\..\foundation-libsass{0}.css", jobID)), result.CSS);
             }
 
             sw.Stop();

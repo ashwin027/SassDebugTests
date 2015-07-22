@@ -18,6 +18,8 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
+#pragma once
+
 using namespace System;
 
 namespace LibSassNet
@@ -29,3 +31,4 @@ namespace LibSassNet
 			static void UnsetFileAccessCallBack();
 	};
 }
+

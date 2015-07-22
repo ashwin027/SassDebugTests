@@ -561,10 +561,6 @@ namespace Sass {
       return true;
     }
 
-    bool isPrintable(Expression* e, Output_Style style) {
-      return isPrintable(e, style);
-    }
-
     bool isPrintable(Feature_Block* f, Output_Style style) {
       if (f == NULL) {
         return false;

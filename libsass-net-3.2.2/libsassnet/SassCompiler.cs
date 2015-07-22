@@ -39,40 +39,6 @@ namespace LibSassNet
             _sassInterface = sassInterface;
         }
 
-        // Dispose() calls Dispose(true)
-        public virtual void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
-        }
-
-        ~SassCompiler()
-        {
-            // Finalizer calls Dispose(false)
-            Dispose(false);
-        }
-
-
-        // The bulk of the clean-up code is implemented in Dispose(bool)
-        protected virtual void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                // free managed resources
-                if (_sassInterface != null)
-                {
-                    //((SassInterface)_sassInterface).Dispose();
-                    //_sassInterface = null;
-                }
-            }
-            // free native resources if there are any.
-            //if (nativeResource != IntPtr.Zero)
-            //{
-            //    Marshal.FreeHGlobal(nativeResource);
-            //    nativeResource = IntPtr.Zero;
-            //}
-        }
-
         public string Compile(string source, OutputStyle outputStyle = OutputStyle.Nested, bool includeSourceComments = true, int precision = 5, IEnumerable<string> includePaths = null)
         {
 

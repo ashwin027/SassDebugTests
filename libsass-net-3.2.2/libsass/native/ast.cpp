@@ -656,27 +656,30 @@ namespace Sass {
   }*/
 
   Number::Number(ParserState pstate, double val, string u, bool zero)
-  : Expression(pstate),
-    value_(val),
-    zero_(zero),
-    numerator_units_(vector<string>()),
-    denominator_units_(vector<string>()),
-    hash_(0)
+	  : Expression(pstate),
+	  value_(val),
+	  zero_(zero),
+	  numerator_units_(vector<string>()),
+	  denominator_units_(vector<string>()),
+	  hash_(0)
   {
-    size_t l = 0, r = 0;
-    if (!u.empty()) {
-      bool nominator = true;
-      while (true) {
-        r = u.find_first_of("*/", l);
-        string unit(u.substr(l, r - l));
-        if (nominator) numerator_units_.push_back(unit);
-        else denominator_units_.push_back(unit);
-        if (r == string::npos) break;
-		else if (u[r] == '/') nominator = false;
-		else l = r + 1;
-      }
-    }
-    concrete_type(NUMBER);
+	  size_t l = 0, r = 0;
+	  if (!u.empty()) {
+		  bool nominator = true;
+		  while (true) {
+			  r = u.find_first_of("*/", l);
+			  string unit(u.substr(l, r == string::npos ? r : r - l));
+			  if (nominator) numerator_units_.push_back(unit);
+			  else denominator_units_.push_back(unit);
+			  if (r == string::npos) break;
+			  // ToDo: should error for multiple slashes
+			  // if (!nominator && u[r] == '/') error(...)
+			  if (u[r] == '/')
+				  nominator = false;
+			  l = r + 1;
+		  }
+	  }
+	  concrete_type(NUMBER);
   }
 
   string Number::unit() const

@@ -18,6 +18,8 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
+#pragma once
+
 namespace LibSassNet
 {
 	typedef void (__stdcall *FileAccessDelegate)(const char* path);
@@ -40,3 +42,4 @@ namespace LibSassNet
 			void trigger_file_access_callback(const char* path);
 	};
 }
+

@@ -18,6 +18,8 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
+#pragma once
+
 #include "SassOptions.hpp"
 
 namespace LibSassNet
@@ -31,3 +33,4 @@ namespace LibSassNet
 		/*int Compile(SassFolderContext^ sassFolderContext);*/
 	};
 }
+

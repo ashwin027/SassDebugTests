@@ -28,22 +28,6 @@ using namespace std;
 
 namespace LibSassNet
 {
-	
-	SassInterface::SassInterface()
-	{
-		int debug = 1;
-	}
-
-	SassInterface::~SassInterface() // Dispose
-	{
-		int debug = 2;
-	}
-
-	SassInterface::!SassInterface() // Finalize
-	{
-		int debug = 3;
-	}
-
 	int SassInterface::Compile(SassContext^ sassContext)
 	{
 		sass_context* ctx = sass_new_context();

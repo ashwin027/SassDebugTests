@@ -53,13 +53,11 @@
     <StartupObject>libsasstest.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LibSass.x64, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="LibSass.x64">
       <HintPath>..\libsass-net-3.2.2\libsass\bin\Release\LibSass.x64.dll</HintPath>
     </Reference>
-    <Reference Include="libsassnet, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\libsass-net-3.2.2\libsassnet\bin\x64\Release\libsassnet.dll</HintPath>
+    <Reference Include="libsassnet">
+      <HintPath>..\libsass-net-3.2.2\libsassnet\bin\Release\libsassnet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

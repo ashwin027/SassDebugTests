@@ -18,23 +18,20 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
+#pragma once
+
 #include "ISassInterface.hpp"
 
 namespace LibSassNet
 {
 	public ref class SassInterface : ISassInterface
 	{
-	public:
-		SassInterface();
-		virtual ~SassInterface();
-
-		!SassInterface();
-	
-	public:
-		virtual int Compile(SassContext^ sassContext);
-		virtual int Compile(SassFileContext^ sassFileContext);
-		virtual void Convert(SassToScssConversionContext^ context);
-		// Folder context isn't implemented in core libsass library now
-		/*virtual int Compile(SassFolderContext^ sassFolderContext);*/
+		public:
+			virtual int Compile(SassContext^ sassContext);
+			virtual int Compile(SassFileContext^ sassFileContext);
+			virtual void Convert(SassToScssConversionContext^ context);
+			// Folder context isn't implemented in core libsass library now
+			/*virtual int Compile(SassFolderContext^ sassFolderContext);*/
 	};
 }
+

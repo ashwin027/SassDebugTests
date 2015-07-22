@@ -18,6 +18,8 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
+#pragma once
+
 #using <System.dll>
 
 using namespace System;
@@ -30,3 +32,4 @@ namespace LibSassNet
 	const char* MarshalConstString(String^ s);
 	void FreeConstString(const char* p);
 }
+

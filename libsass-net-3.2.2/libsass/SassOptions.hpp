@@ -18,6 +18,8 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //SOFTWARE.
 
+#pragma once
+
 #using <System.dll>
 
 using namespace System;
@@ -72,3 +74,4 @@ namespace LibSassNet
 			property String^ OutputText;
 	};
 }
+
